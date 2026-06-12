@@ -9,6 +9,11 @@ function SubjectList({ subjects, setSubjects }) {
         <div className="card">
             <div className="card-title">Subjects</div>
             <div className="subject-list">
+
+                {subjects.length === 0 && (
+                    <span className="empty-msg">Add any subject</span>
+                )}
+
                 {subjects.map((s) => {
                     const color = s.color;
                     const isPass = s.score >= 50;
@@ -38,7 +43,9 @@ function SubjectList({ subjects, setSubjects }) {
                             </div>
                         </div>
                     );
-                })}
+                })
+
+                }
             </div>
         </div>
     );

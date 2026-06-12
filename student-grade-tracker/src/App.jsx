@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./component/App.css";
 import Stats from "./component/Stats";
 import SubjectList from "./component/SubjectList";
@@ -31,7 +31,18 @@ const initialSubjects = [
 ];
 
 function App() {
-  const [subjects, setSubjects] = useState(initialSubjects);
+  const [subjects, setSubjects] = useState(() => {
+    const savedSubjects = sessionStorage.getItem("subjects");
+
+    return savedSubjects
+      ? JSON.parse(savedSubjects)
+      : initialSubjects;
+  });
+
+
+  useEffect(() => {
+    sessionStorage.setItem("subjects", JSON.stringify(subjects))
+  }, [subjects])
 
 
 

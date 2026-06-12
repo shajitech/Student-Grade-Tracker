@@ -57,6 +57,7 @@ h1 { text-align: center; font-size: 2.2rem; font-weight: 800; color: #111; margi
 .error-msg { color: #dc2626; font-size: 0.8rem; margin-top: 8px; }
 
 /* Subject List */
+.empty-msg{text-align: center;color: #888;}
 .subject-list { display: flex; flex-direction: column; }
 
 .subject-row {
