@@ -32,7 +32,7 @@ const initialSubjects = [
 
 function App() {
   const [subjects, setSubjects] = useState(() => {
-    const savedSubjects = sessionStorage.getItem("subjects");
+    const savedSubjects = localStorage.getItem("subjects");
 
     return savedSubjects
       ? JSON.parse(savedSubjects)
@@ -41,7 +41,7 @@ function App() {
 
 
   useEffect(() => {
-    sessionStorage.setItem("subjects", JSON.stringify(subjects))
+    localStorage.setItem("subjects", JSON.stringify(subjects))
   }, [subjects])
 
 
